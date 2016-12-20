@@ -1,4 +1,4 @@
-#
+
 Project Deep Lang
 This is an open source collobrative project bettwen David Hashe and Kevin Hong focused on Natural Language Processing.
 
