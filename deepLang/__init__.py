@@ -1,0 +1,1 @@
+from .deepLang import app

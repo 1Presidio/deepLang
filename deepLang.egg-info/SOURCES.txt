@@ -1,0 +1,11 @@
+MANIFEST.in
+deepLang/__init__.py
+deepLang/deepLang.py
+deepLang/schema.sql
+deepLang.egg-info/PKG-INFO
+deepLang.egg-info/SOURCES.txt
+deepLang.egg-info/dependency_links.txt
+deepLang.egg-info/requires.txt
+deepLang.egg-info/top_level.txt
+deepLang/static/main.css
+deepLang/templates/main.html

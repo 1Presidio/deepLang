@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+      <form class="float-label" spellcheck="false">
+        <legend>Deep Lang</legend>
+        <dd>
+        <div>
+          <form action="action_page.php">
+            <label for="fname">Text Title</label>
+            <input type="text" id="fname" name="firstname">
+
+            <label for="lname">Text</label>
+            <input type="text" id="lname" name="lastname">
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+
+
+        <dd>
+        </div>
+      </form>
+    </form>
+{% endblock %}

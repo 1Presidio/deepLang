@@ -1,0 +1,3 @@
+graft deepLang/templates
+graft deepLang/static
+include deepLang/schema.sql
