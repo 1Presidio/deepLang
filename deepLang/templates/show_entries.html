@@ -5,7 +5,9 @@
 <!-- https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg -->
 
 <style>
+
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
+
 * {
     box-sizing: border-box;
 }
@@ -13,8 +15,8 @@
 h2  {
   text-align: center;
   font-size: 3em;
-  font-weight: 50;
-  color: white
+  font-weight: 100;
+  color: black;
 }
 
 .background-image {
@@ -32,13 +34,13 @@ h2  {
 
 .content {
     background: rgba(255, 255, 255, 0.35);
-    border-radius: 15px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
     top: 5%;
+    height: 75%;
     position: fixed;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
     right: 0;
     z-index: 2;
     padding: 0 10px;
@@ -78,14 +80,11 @@ label.raised {
     top: 0rem;
 
 }
-label.highlight {
-    color: rgba(255, 255, 255, .6);
-}
 
-[type="text"],
-[type="email"] {
+
+[type="text"] {
     color: rgba(255, 255, 255, .4);
-    font-family: "proxima-nova";
+
     padding: .25rem 0 0;
     font-size: 1.25rem;
     font-weight: 400;
@@ -95,10 +94,10 @@ label.highlight {
     background: none;
     transition: color .3s ease;
 }
-[type="text"]:focus,
-[type="email"]:focus {
-    color: rgba(255, 255, 255, 1);
+[type="text"]:focus {
+    color: rgba(255, 255, 255, 0.5);
     outline: 0;
+
 }
 
 
@@ -142,7 +141,6 @@ label.highlight {
   right: 0;
 }
 
-
 .button {
   background-color: transparent;
   border: 2px solid black;
@@ -165,6 +163,7 @@ label.highlight {
 
 .submitButton {
   text-align: center;
+  padding: 15px;
 }
 
 .inputBox {
@@ -174,7 +173,8 @@ label.highlight {
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    background-color: #f8f8f8;
+    background-color: rgba(255, 255, 255, 0.5);
+    /*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 8px rgba(0, 0, 0, 0.6);*/
     font-size: 16px;
     resize: none;
 
@@ -198,6 +198,8 @@ label.highlight {
             <label for="textTitle">Text Title</label>
             <input id="text" type="text">
         </div>
+
+
             <textarea class="inputBox">Insert Text Here...</textarea>
 
         <div class="submitButton">
