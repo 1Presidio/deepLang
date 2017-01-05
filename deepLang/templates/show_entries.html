@@ -5,10 +5,18 @@
 <!-- https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg -->
 
 <style>
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
 * {
     box-sizing: border-box;
 }
+
+h2  {
+  text-align: center;
+  font-size: 3em;
+  font-weight: 50;
+  color: white
+}
+
 .background-image {
     background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
     background-size: cover;
@@ -21,13 +29,13 @@
     right: 0;
     z-index: 1;
 }
+
 .content {
     background: rgba(255, 255, 255, 0.35);
     border-radius: 15px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    top: 50px;
     left: 0;
+    top: 5%;
     position: fixed;
     margin-left: 20px;
     margin-right: 20px;
@@ -35,25 +43,15 @@
     z-index: 2;
     padding: 0 10px;
 }
-.websiteName {
-    font-size: 16;
-}
-html {
-    box-sizing: border-box;
-}
+
 *,
 *:before,
 *:after {
     box-sizing: inherit;
     -webkit-font-smoothing: antialiased;
 }
-.content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 4rem auto 0;
-    max-width: 26rem;
-}
+
+
 .input-field {
     padding: 0 .5em 2em;
 }
@@ -63,6 +61,7 @@ html {
 .input-field.full {
     flex: 2 0 100%;
 }
+
 label {
     display: block;
     position: relative;
@@ -77,10 +76,12 @@ label {
 }
 label.raised {
     top: 0rem;
+
 }
 label.highlight {
     color: rgba(255, 255, 255, .6);
 }
+
 [type="text"],
 [type="email"] {
     color: rgba(255, 255, 255, .4);
@@ -142,28 +143,12 @@ label.highlight {
 }
 
 
-
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
-.wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100px;
-  width: 200px;
-  margin: auto;
-}
-
 .button {
   background-color: transparent;
-  border: 2px solid #1ECD97;
+  border: 2px solid black;
   border-radius: 4px;
   display: inline-block;
-  color: #1ECD97;
+  color: white;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -175,24 +160,24 @@ body {
   padding: 0 22px;
   text-align: center;
   text-transform: uppercase;
-  transition: all .2s ease-in-out;
-}
-.button:hover {
-  background-color: #1ECD97;
+  transition: all .1s ease-in-out;
 }
 
-.roll-text {
-  display: block;
-  position: relative;
-  transition: all 420ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.submitButton {
+  text-align: center;
 }
 
-.roll-text:last-child {
-  color: #fff;
-}
+.inputBox {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 
-.rollover:hover .roll-text:first-child {
-  margin-top: -38px;
 }
 
 </style>
@@ -207,25 +192,19 @@ body {
     <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
 
 
-        <h1 class="websiteName">Deep Lang</h1>
+        <h2>Deep Lang</h2>
 
         <div class="input-field half">
-            <label for="firstName">First Name</label>
-            <input id="firstName" type="text">
+            <label for="textTitle">Text Title</label>
+            <input id="text" type="text">
+        </div>
+            <textarea class="inputBox">Insert Text Here...</textarea>
+
+        <div class="submitButton">
+          <button class="button" style="vertical-align:middle"><span>Submit</span></button>
         </div>
 
-        <div class="input-field half">
-            <label for="lastName">Last Name</label>
-            <input id="lastName" type="text">
-        </div>
 
-        <button class="button" style="vertical-align:middle"><span>Submit </span></button>
-        <div class="wrap">
-          <a class="button rollover">
-            <span class="roll-text">About Us</span>
-            <span class="roll-text">Go</span>
-          </a>
-        </div>
     </form>
 
 </div>
