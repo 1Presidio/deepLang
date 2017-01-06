@@ -14,19 +14,6 @@ h2 {
 	color: black;
 }
 
-.background-image {
-	background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
-	background-size: cover;
-	display: block;
-	filter: blur(5px);
-	-webkit-filter: blur(5px);
-	height: 800px;
-	left: 0;
-	position: fixed;
-	right: 0;
-	z-index: 1;
-}
-
 .contentpage {
 	background: rgba(255, 255, 255, 0.35);
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
@@ -38,6 +25,7 @@ h2 {
 	margin-right: 25px;
 	right: 0;
 	z-index: 2;
+
 	padding: 0 10px;
 }
 
@@ -61,14 +49,13 @@ h2 {
 [type="text"] {
 	color: rgba(255, 255, 255, .75);
 	padding: .25rem 0 0;
+  padding-left: .5rem;
 	font-size: 1.25rem;
 	font-weight: 400;
-	width: 50%;
+	width: auto;
 	border: none;
 	border-bottom: 2px solid black;
-  border-left: 2px solid black;
-  border-right:2px solid black;
-  border-top:2px solid black;
+
 	background: none;
 	transition: color .3s ease;
 }
@@ -143,16 +130,34 @@ h2 {
 	padding: 15px;
 }
 
-textarea {
-	width: 50%;
-	height: 175px;
-	padding: 12px 20px;
+/*textarea {
+  width: 50%;
+	padding: .25rem 0 0;
 	box-sizing: border-box;
 	border: 2px solid black;
 	background: none;
 	font-size: 1.25rem;
 	resize: none;
 	color: black;
+}*/
+
+[type="textbox"] {
+  width: 50%;
+	padding: .25rem 0 0;
+	box-sizing: border-box;
+	border: 2px solid black;
+	background: none;
+	font-size: 1.25rem;
+	resize: none;
+	color: black;
+
+	background: none;
+	transition: color .3s ease;
+}
+
+[type="textbox"]:focus {
+	color: rgba(255, 255, 255, .25);
+	outline: 0;
 }
 
 input::-webkit-input-placeholder {
@@ -161,16 +166,31 @@ input::-webkit-input-placeholder {
 
 textarea::-webkit-input-placeholder {
 	color: black;
+  text-align: center;
 }
 
 .form {
   text-align: center;
 }
-</style>
 
+
+body:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-filter: blur(5px);
+  background: url(https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg) no-repeat;
+  background-size: cover;
+}
+
+</style>
+<body>
 <!-- https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg -->
 <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='show_entries.css') }}"> -->
-<div class="background-image"></div>
 <div class="contentpage">
    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
       <h2>Deep Lang</h2>
@@ -178,11 +198,14 @@ textarea::-webkit-input-placeholder {
         <div class="input-field half">
            <input type="text" placeholder="Enter your title here"></input>
         </div>
-        <textarea type="text" rows= "30" cols="50" placeholder="Enter your text here..."></textarea>
+        <textarea type="textbox" rows= "10" cols="50" placeholder="Enter your text here..."></textarea>
     </div>
       <div class="submitButton">
          <button class="button" style="vertical-align:middle"><span>Submit</span></button>
       </div>
    </form>
 </div>
+
+</body>
+
 {% endblock %}
