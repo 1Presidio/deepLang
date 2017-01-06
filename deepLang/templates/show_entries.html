@@ -16,6 +16,8 @@ h2  {
   text-align: center;
   font-size: 3em;
   font-weight: 100;
+  text-shadow: #808080 1px 1px, #808080 2px 2px, #808080 3px 3px, #808080 4px 4px;
+
   color: black;
 }
 
@@ -32,7 +34,7 @@ h2  {
     z-index: 1;
 }
 
-.content {
+.contentpage {
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
@@ -90,10 +92,12 @@ label.raised {
     font-weight: 400;
     width: 100%;
     border: none;
-    border-bottom: 1px solid;
+    border-bottom: 2px solid black;
     background: none;
     transition: color .3s ease;
 }
+
+
 [type="text"]:focus {
     color: rgba(255, 255, 255, 0.5);
     outline: 0;
@@ -166,18 +170,23 @@ label.raised {
   padding: 15px;
 }
 
-.inputBox {
+textarea {
     width: 100%;
-    height: 150px;
+    height: 175px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
+    border: 2px solid black;
+    background: none;
+    font-size: 1.25rem;
     resize: none;
-
+    color: black;
 }
+
+input::-webkit-input-placeholder {
+color: black !important;
+}
+
+textarea::-webkit-input-placeholder {  color: black;}
 
 </style>
 
@@ -187,19 +196,19 @@ label.raised {
 
 <div class="background-image"></div>
 
-<div class="content">
+<div class="contentpage">
+
     <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
 
 
         <h2>Deep Lang</h2>
 
         <div class="input-field half">
-            <label for="textTitle">Text Title</label>
-            <input id="text" type="text">
+            <input type="text" placeholder="enter your text here"></input>
         </div>
 
 
-            <textarea class="inputBox">Insert Text Here...</textarea>
+            <textarea rows= "30 cols="50" placeholder="Enter your text here..."></textarea>
 
         <div class="submitButton">
           <button class="button" style="vertical-align:middle"><span>Submit</span></button>
@@ -209,4 +218,6 @@ label.raised {
     </form>
 
 </div>
+
+
     {% endblock %}
