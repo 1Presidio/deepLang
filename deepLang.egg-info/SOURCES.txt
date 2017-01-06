@@ -7,5 +7,9 @@ deepLang.egg-info/SOURCES.txt
 deepLang.egg-info/dependency_links.txt
 deepLang.egg-info/requires.txt
 deepLang.egg-info/top_level.txt
-deepLang/static/main.css
-deepLang/templates/main.html
+deepLang/static/styled.css
+deepLang/templates/layout.html
+deepLang/templates/loading.html
+deepLang/templates/notfound.html
+deepLang/templates/show_entries.html
+deepLang/templates/view.html
