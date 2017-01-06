@@ -19,13 +19,13 @@ h2 {
 	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
 	left: 0;
 	top: 5%;
-	height: 75%;
+	height: 2000px;
 	position: fixed;
 	margin-left: 25px;
 	margin-right: 25px;
 	right: 0;
 	z-index: 2;
-
+  position: fixed;
 	padding: 0 10px;
 }
 
@@ -130,17 +130,6 @@ h2 {
 	padding: 15px;
 }
 
-/*textarea {
-  width: 50%;
-	padding: .25rem 0 0;
-	box-sizing: border-box;
-	border: 2px solid black;
-	background: none;
-	font-size: 1.25rem;
-	resize: none;
-	color: black;
-}*/
-
 [type="textbox"] {
   width: 50%;
 	padding: .25rem 0 0;
@@ -149,7 +138,7 @@ h2 {
 	background: none;
 	font-size: 1.25rem;
 	resize: none;
-	color: black;
+	color: white;
 
 	background: none;
 	transition: color .3s ease;
@@ -173,7 +162,14 @@ textarea::-webkit-input-placeholder {
   text-align: center;
 }
 
+html  {
+  height: 100%;
+}
 
+body  {
+  background-color: white;
+  height: 2000px;
+}
 body:before {
   content: '';
   z-index: -1;
@@ -183,20 +179,19 @@ body:before {
   top: 0;
   bottom: 0;
   -webkit-filter: blur(5px);
-  background: url(https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg) no-repeat;
+  background: url(https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg);
   background-size: cover;
 }
 
 </style>
-<body>
-<!-- https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg -->
+
 <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='show_entries.css') }}"> -->
 <div class="contentpage">
    <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
       <h2>Deep Lang</h2>
       <div class="form">
         <div class="input-field half">
-           <input type="text" placeholder="Enter your title here"></input>
+           <input type="text" placeholder="Enter your title here..."></input>
         </div>
         <textarea type="textbox" rows= "10" cols="50" placeholder="Enter your text here..."></textarea>
     </div>
@@ -205,7 +200,5 @@ body:before {
       </div>
    </form>
 </div>
-
-</body>
 
 {% endblock %}
