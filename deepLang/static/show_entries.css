@@ -55,29 +55,13 @@ h2 {
 	flex: 2 0 100%;
 }
 
-label {
-	display: block;
-	position: relative;
-	z-index: -9;
-	top: 1.5rem;
-	color: rgba(255, 255, 255, .4);
-	font-size: .875rem;
-	text-transform: uppercase;
-	font-weight: 600;
-	letter-spacing: 2px;
-	transition: top .3s ease, color .3s ease;
-}
-
-label.raised {
-	top: 0rem;
-}
 
 [type="text"] {
 	color: rgba(255, 255, 255, .4);
 	padding: .25rem 0 0;
 	font-size: 1.25rem;
 	font-weight: 400;
-	width: 100%;
+	width: 50%;
 	border: none;
 	border-bottom: 2px solid black;
 	background: none;
@@ -155,7 +139,7 @@ label.raised {
 }
 
 textarea {
-	width: 100%;
+	width: 50%;
 	height: 175px;
 	padding: 12px 20px;
 	box-sizing: border-box;
@@ -172,4 +156,8 @@ input::-webkit-input-placeholder {
 
 textarea::-webkit-input-placeholder {
 	color: black;
+}
+
+.form {
+  text-align: center;
 }
