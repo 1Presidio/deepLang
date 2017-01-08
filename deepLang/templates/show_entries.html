@@ -25,16 +25,13 @@ h2 {
     padding: 0 10px;
 }
 .aboutpage {
-    background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
-    left: 0;
-    height: auto;
-    position: absolute;
+    top: 50%;
     margin-left: 25px;
     width: 50%;
     margin-right: 25px;
     right: 0;
-    z-index: 2;
+    z-index: 5;
     padding: 0 10px;
 }
 .input-field {
@@ -148,12 +145,15 @@ textarea::-webkit-input-placeholder {
     text-align: center;
 }
 .parallax {
-  height: 500px; /* fallback for older browsers */
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-perspective: 300px;
-  perspective: 300px;
+    height: 500px;
+    /* fallback for older browsers */
+
+    height: 100vh;
+    /*overflow: visible;*/
+    /*overflow-x: hidden;*/
+    overflow-y: auto;
+    -webkit-perspective: 300px;
+    perspective: 300px;
 }
 .parallax__layer {
     position: absolute;
@@ -163,25 +163,23 @@ textarea::-webkit-input-placeholder {
     left: 0;
 }
 .parallax__layer--base {
-  -webkit-transform: translateZ(0);
-  z-index: 3;
+    -webkit-transform: translateZ(0);
+    z-index: 3;
 }
-
 .parallax__layer--back {
-  -webkit-transform: translateZ(-50px) scale(2);
-  z-index: 2;
+    -webkit-transform: translateZ(-300px) scale(2);
+    z-index: 2;
 }
 .parallax__group {
-  position: relative;
-  height: 500px; /* fallback for older browsers */
-  height: 100vh;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+    position: relative;
+    height: 500px;
+    /* fallback for older browsers */
+    height: 100vh;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
-
 #group1 {
     z-index: 3;
-
 }
 #group1 .parallax__layer--back {
     background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
@@ -190,7 +188,7 @@ textarea::-webkit-input-placeholder {
 #group2 {
     z-index: 1;
 }
-#group2 .parallax__layer--back {
+#group2 .parallax__layer--base {
     background-image: url("https://c2.staticflickr.com/6/5605/30089280916_544a0b3bce_o.jpg");
     background-size: 100% 100%;
 }
@@ -199,14 +197,11 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     margin-left: 0px;
+}
 
-}
-body, html {
-    overflow: hidden
-}
 * {
-  margin:0;
-  padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 </style>
@@ -235,7 +230,8 @@ body, html {
          <div class="parallax__layer parallax__layer--back">
          </div>
       </div>
-      <div></div>
+
+
       <div id="group2" class="parallax__group">
          <div class="parallax__layer parallax__layer--base">
             <div class="aboutpage">
@@ -249,7 +245,6 @@ body, html {
                <p> this is just a test </p>
             </div>
          </div>
-         <div class="parallax__layer parallax__layer--back">
          </div>
       </div>
    </div>
