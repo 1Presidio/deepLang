@@ -2,20 +2,16 @@
 {% block body %}
 
 <style>
-/** {
-    box-sizing: border-box;
-}*/
-
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500);
 h2 {
     text-align: center;
     font-size: 3em;
     font-weight: 100;
-    text-shadow: #808080 1px 1px, #808080 2px 2px, #808080 3px 3px, #808080 4px 4px;
+    text-shadow: #808080 1px 1px, #808080 2px 2px, #808080 3px 3px;
     color: black;
 }
-
 .contentpage {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, .5);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
     top: 5%;
@@ -25,44 +21,31 @@ h2 {
     margin-right: 25px;
     right: 0;
     z-index: 2;
-    position: absolute;;
+    font-family: "Roboto", sans-serif;
     padding: 0 10px;
 }
-
 .aboutpage {
     background: rgba(255, 255, 255, 0.35);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
-    height: 75%;
+    height: auto;
     position: absolute;
     margin-left: 25px;
+    width: 50%;
     margin-right: 25px;
     right: 0;
     z-index: 2;
-    position: absolute;;
     padding: 0 10px;
 }
-
-/**,
-*:before,
-
-*:after {
-    box-sizing: inherit;
-    -webkit-font-smoothing: antialiased;
-}*/
-
 .input-field {
     padding: 0 .5em 2em;
 }
-
 .input-field.half {
     flex: 1 0 50%;
 }
-
 .input-field.full {
     flex: 2 0 100%;
 }
-
 [type="text"] {
     color: rgba(255, 255, 255, .75);
     padding: .25rem 0 0;
@@ -75,12 +58,10 @@ h2 {
     background: none;
     transition: color .3s ease;
 }
-
 [type="text"]:focus {
     color: rgba(255, 255, 255, .25);
     outline: 0;
 }
-
 .button {
     display: inline-block;
     border-radius: 4px;
@@ -95,14 +76,12 @@ h2 {
     cursor: pointer;
     margin: 5px;
 }
-
 .button span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
 }
-
 .button span:after {
     content: '\00bb';
     position: absolute;
@@ -111,16 +90,13 @@ h2 {
     right: -20px;
     transition: 0.5s;
 }
-
 .button:hover span {
     padding-right: 25px;
 }
-
 .button:hover span:after {
     opacity: 1;
     right: 0;
 }
-
 .button {
     background-color: transparent;
     border: 2px solid black;
@@ -140,12 +116,10 @@ h2 {
     text-transform: uppercase;
     transition: all .1s ease-in-out;
 }
-
 .submitButton {
     text-align: center;
     padding: 15px;
 }
-
 [type="textbox"] {
     width: 50%;
     padding: .5rem;
@@ -159,33 +133,28 @@ h2 {
     background: none;
     transition: color .3s ease;
 }
-
 [type="textbox"]:focus {
     color: rgba(255, 255, 255, .25);
     outline: 0;
 }
-
 input::-webkit-input-placeholder {
     color: black !important;
 }
-
 textarea::-webkit-input-placeholder {
     color: black;
     text-align: center;
 }
-
 .form {
     text-align: center;
 }
-
-
 .parallax {
-    perspective: 1px;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+  height: 500px; /* fallback for older browsers */
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-perspective: 300px;
+  perspective: 300px;
 }
-
 .parallax__layer {
     position: absolute;
     top: 0;
@@ -193,120 +162,97 @@ textarea::-webkit-input-placeholder {
     bottom: 0;
     left: 0;
 }
-
 .parallax__layer--base {
   -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 4;
+  z-index: 3;
 }
 
 .parallax__layer--back {
-    transform: translateZ(-1px) scale(2);
-    -webkit-transform: translateZ(-3x) scale(2);
-    z-index: 3;
-}
-
-.parallax__layer--deep {
-  transform: translateZ(-2px) scale(3);
-  -webkit-transform: translateZ(-2px) scale(3);
+  -webkit-transform: translateZ(-50px) scale(2);
   z-index: 2;
 }
-
 .parallax__group {
   position: relative;
+  height: 500px; /* fallback for older browsers */
   height: 100vh;
-  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
 #group1 {
-  z-index: 5; /* slide over group 2 */
+    z-index: 3;
+
 }
 #group1 .parallax__layer--back {
-  background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
-  background-size: 100% 100%;
+    background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
+    background-size: 100% 100%;
 }
-
 #group2 {
-  z-index: 3; /* slide under groups 1 and 3 */
+    z-index: 1;
 }
-
 #group2 .parallax__layer--back {
-  background-image: url("https://c2.staticflickr.com/6/5605/30089280916_544a0b3bce_o.jpg");
-  background-size: 100% 100%;
+    background-image: url("https://c2.staticflickr.com/6/5605/30089280916_544a0b3bce_o.jpg");
+    background-size: 100% 100%;
 }
-
 body {
- margin-top: 0px;
- margin-right: 0px;
- margin-bottom: 0px;
- margin-left: 0px
-}
-
-html{
-  overflow-y: hidden
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 
 }
-
-
-/*.title  {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  }*/
-
+body, html {
+    overflow: hidden
+}
+* {
+  margin:0;
+  padding:0;
+}
 
 </style>
 
 <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='show_entries.css') }}"> -->
 <body class="">
+   <div class="parallax">
 
-
-
-
-  <div class="parallax">
-
-    <div id="group1" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="contentpage">
-           <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
-              <h2>Deep Lang</h2>
-              <div class="form">
-                 <div class="input-field half">
-                    <input type="text" placeholder=" Enter your title here..."></input>
-                 </div>
-                 <textarea type="textbox" rows= "10" cols="50" placeholder="Enter your text here..."></textarea>
-              </div>
-              <div class="submitButton">
-                 <button class="button" style="vertical-align:middle"><span>Submit</span></button>
-              </div>
-           </form>
-        </div>
+      <div id="group1" class="parallax__group">
+         <div class="parallax__layer parallax__layer--base">
+            <div class="contentpage">
+               <form action="{{ url_for('add_entry') }}" method=post class=add-entry>
+                  <h2>Deep Lang</h2>
+                  <div class="form">
+                     <div class="input-field half">
+                        <input type="text" placeholder="   Enter your title here..."></input>
+                     </div>
+                     <textarea type="textbox" rows= "10" cols="50" placeholder="Enter your text here..."></textarea>
+                  </div>
+                  <div class="submitButton">
+                     <button class="button" style="vertical-align:middle"><span>Submit</span></button>
+                  </div>
+               </form>
+            </div>
+         </div>
+         <div class="parallax__layer parallax__layer--back">
+         </div>
       </div>
-      <div class="parallax__layer parallax__layer--back">
-        <!-- <img class="page1" src= style="width:100%;height:100%;"> -->
+      <div></div>
+      <div id="group2" class="parallax__group">
+         <div class="parallax__layer parallax__layer--base">
+            <div class="aboutpage">
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+               <p> this is just a test </p>
+            </div>
+         </div>
+         <div class="parallax__layer parallax__layer--back">
+         </div>
       </div>
-    </div>
-
-    <div id="group2" class="parallax__group">
-      <div class="parallax__layer parallax__layer--base">
-        <div class="title">Just a test!</div>
-      </div>
-      <div class="parallax__layer parallax__layer--back">
-        <div class="page2">Background Layer</div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-
-
-
+   </div>
 </body>
 
 
