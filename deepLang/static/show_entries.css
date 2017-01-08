@@ -21,16 +21,16 @@ h2 {
     padding: 0 10px;
 }
 .aboutpage {
-    background: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, .5);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
-    height: auto;
-    position: absolute;
+    bottom: 0;
+    position: relative;
     margin-left: 25px;
-    width: 50%;
     margin-right: 25px;
     right: 0;
     z-index: 2;
+    font-family: "Roboto", sans-serif;
     padding: 0 10px;
 }
 .input-field {
@@ -148,6 +148,7 @@ textarea::-webkit-input-placeholder {
     /* fallback for older browsers */
 
     height: 100vh;
+    overflow: visible;
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-perspective: 300px;
@@ -165,14 +166,13 @@ textarea::-webkit-input-placeholder {
     z-index: 3;
 }
 .parallax__layer--back {
-    -webkit-transform: translateZ(-50px) scale(1);
+    -webkit-transform: translateZ(-300px) scale(2);
     z-index: 2;
 }
 .parallax__group {
     position: relative;
     height: 500px;
     /* fallback for older browsers */
-
     height: 100vh;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
@@ -181,14 +181,13 @@ textarea::-webkit-input-placeholder {
     z-index: 3;
 }
 #group1 .parallax__layer--back {
-    background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
-    background-size: 100% 100%;
+    background: -webkit-linear-gradient(bottom, grey, black);
 }
 #group2 {
     z-index: 1;
 }
-#group2 .parallax__layer--back {
-    background-image: url("https://c2.staticflickr.com/6/5605/30089280916_544a0b3bce_o.jpg");
+#group2 .parallax__layer--base {
+    background-image: url("https://c1.staticflickr.com/9/8772/30009950692_38bbaaa615_o.jpg");
     background-size: 100% 100%;
 }
 body {
@@ -197,11 +196,27 @@ body {
     margin-bottom: 0px;
     margin-left: 0px;
 }
-body,
-html {
-    overflow: hidden
-}
+
 * {
     margin: 0;
     padding: 0;
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.about {
+    border: 3px solid white;
+    text-align: center;
+    bottom: 0;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    bottom: 0;
+    position: absolute;
+    bottom: 30px;
 }
