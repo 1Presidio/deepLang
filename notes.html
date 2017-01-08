@@ -1,0 +1,10 @@
+<!-- To add a jQuery scroll to the about section -->
+
+
+{% if section %}
+<script>
+    $(function() {
+       $("html, body").animate({ scrollTop: $("#{{ section }}").offset().top }, 500);
+    });
+</script>
+{% endif %}

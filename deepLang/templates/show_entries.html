@@ -14,11 +14,11 @@ h2 {
     background: rgba(255, 255, 255, .5);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
     left: 0;
-    top: 5%;
+    top: 10%;
     height auto;
     position: absolute;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 35px;
+    margin-right: 35px;
     right: 0;
     z-index: 2;
     font-family: "Roboto", sans-serif;
@@ -48,7 +48,7 @@ h2 {
 }
 [type="text"] {
     color: rgba(255, 255, 255, .75);
-    padding: .25rem 0 0;
+    padding: 1rem 0 0;
     padding-left: .5rem;
     font-size: 1.75rem;
     font-weight: 400;
@@ -214,17 +214,23 @@ body {
 }
 
 .about {
-    border: 3px solid white;
+    border: 1px solid white;
     text-align: center;
-    bottom: 0;
     width: 50%;
+    height: 40%;
     margin-left: 25%;
     margin-right: 25%;
-    bottom: 0;
     position: absolute;
     bottom: 30px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, .9);
 }
-
+article {
+  font-family:"Roboto", sans-serif;
+  /*color: grey;*/
+  font-size: 16px;
+  font-weight: 250;
+}
 </style>
 
 <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='show_entries.css') }}"> -->
@@ -254,8 +260,19 @@ body {
       <div id="group2" class="parallax__group">
          <div class="parallax__layer parallax__layer--base">
            <div class="about">
-             Hello this is just a test
-           </div>
+            <article>
+            <p><em>Deep Lang</em> is a NLP project that detects emotion, bias, and factual accuracy in text.</p>
+            <br>
+            <ol>
+              <li>An input is taken in.</li>
+              <li>Using neural networks and machine learning, an output is returned.</li>
+              <li>This data is acquired from previous results.</li>
+            </ol>
+            <br>
+            <p>This project was made in collboration with <b>David Hashe</b> and <b>Kevin Hong</b>.</p>
+            <p>For feedback or comments, please email kevinhong@cmu.edu.</p>
+            </article>
+          </div>
            </div>
          </div>
          </div>
