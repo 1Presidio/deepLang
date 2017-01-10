@@ -231,6 +231,57 @@ article {
   font-size: 16px;
   font-weight: 250;
 }
+svg {
+  display: block;
+  position: absolute;
+  background: none;
+  width: auto;
+  height: auto;
+  top: 30%;
+  stroke: white;
+  transform: scale(.35);
+}
+
+#Right2nd {
+  animation: dash 0.666s ease forwards 1;
+  animation-delay: 0.36s;
+   opacity: 0.05;
+}
+
+#Left1st {
+  animation: dash 1.0s ease forwards 1;
+  animation-delay: 0.0s;
+   opacity: 0.05;
+}
+
+
+@keyframes dash {
+  0% {
+    opacity: 0.0;
+    stroke-width: 0px;
+    stroke-dasharray: 350 840;
+    stroke-dashoffset: 300;
+  }
+  11% {
+    stroke-width: 0.5px;
+  }
+  22% {
+    stroke-width: 1px;
+  }
+  33% {
+    stroke-width: 5px;
+  }
+  66% {
+     opacity: 0.5;
+    stroke-width: 9px;
+  }
+  100% {
+    opacity: 1.0;
+    stroke-width: 18px;
+    stroke-dasharray: 120 840;
+    stroke-dashoffset: 960;
+  }
+}
 </style>
 
 <!-- <link rel=stylesheet type=text/css href="{{ url_for('static', filename='show_entries.css') }}"> -->
@@ -254,6 +305,15 @@ article {
                </form>
             </div>
          </div>
+         <svg version="1.1" id="Down-Arrow-Heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 960 540" style="enable-background:new 0 0 960 540;" xml:space="preserve">
+            <g>
+                <path id="Left1st" class="path" style="fill:none;stroke: ;stroke-width:18;stroke-miterlimit:10;" d="M491.333,364L270,201c0,0,129.1-141.376,314.56,0
+                        C700,289,790,236,790,236" />
+            </g>
+            <g>
+                <path id="Right2nd" class="path" style="fill:none;stroke: ;stroke-width:1;stroke-miterlimit:10;" d="M481,364.25L667,227c0,0-48.75-124.5-194-54" />
+            </g>
+        </svg>
          <div class="parallax__layer parallax__layer--back">
          </div>
       </div>
