@@ -56,8 +56,8 @@ def show_entries():
     entries = cur.fetchall()
     return render_template('show_entries.html', entries=entries)
 
-@app.route('/results/<int:results_id>', methods=['POST'])
-def add_entry(results_id):
+@app.route('/results', methods=['POST'])
+def add_entry():
     db = get_db()
     db.execute('insert into entries (title, text) values (?, ?)',
                [request.form['title'], request.form['text']])
@@ -65,7 +65,6 @@ def add_entry(results_id):
     flash('New entry was successfully posted')
     return redirect(url_for('show_entries'))
 
-
 @app.errorhandler(404)
 def not_found_error(error):
-    return render_template('notfound.html', pic=pic), 404
+    return render_template('notfound.html'), 404
